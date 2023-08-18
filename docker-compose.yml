@@ -5,14 +5,9 @@ services:
     build:
       context: .
       dockerfile: web-director.Dockerfile
-
     container_name: "web-director"
     image: "haproxy:2.3"
     restart: unless-stopped
     ports:
-      - '80:80' # Public HTTP Port
-      - '443:443' # Public HTTPS Port
-
-    volumes:
-      - ./haproxy-config.d:/etc/haproxy/config.d
-      - ./letsencrypt:/etc/letsencrypt
+      - '80:80'
+      - '443:443'
