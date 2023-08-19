@@ -4,7 +4,6 @@ services:
   app:
     container_name: "web-director"
     image: "docker.io/library/haproxy:2.3"
-    restart: "unless-stopped"
     ports:
       - '80:80'
       - '443:443'

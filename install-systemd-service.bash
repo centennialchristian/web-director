@@ -13,8 +13,8 @@ echo "Creating systemd service... /etc/systemd/system/${SERVICE_NAME}.service"
 service_file_contents=$(cat <<EOF
 [Unit]
 Description=$SERVICE_NAME
-Requires=docker.service
-After=docker.service
+Requires=podman.service
+After=podman.service
 
 [Service]
 Restart=always
