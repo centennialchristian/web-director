@@ -2,12 +2,11 @@
 version: '0.8'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: "web-director"
     image: "docker.io/haproxy:2.3"
-    restart: unless-stopped
+    restart: "unless-stopped"
     ports:
       - '80:80'
       - '443:443'
+    volumes:
+      - "./haproxy:/usr/local/etc/haproxy"
